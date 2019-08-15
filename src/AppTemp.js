@@ -11,12 +11,16 @@ import ResultList from './components/ResultList/ResultList';
 //
 
 function App() {
+  const state = true;
+
   return (
     <div className="App">
-      <Button onClick={() => alert(1)}>default value</Button>
-      <Button className={'test-class'} active onClick={() => alert(2)}>
+      <Button onClick={() => alert(1)}>
         default value
-        {/* {active ? 'Remove from list' : 'Add to list'} */}
+      </Button>
+      <Button className={'test-class'} active={state} onClick={() => alert(2)}>
+        {/* default value */}
+        {state ? 'Remove from list' : 'Add to list'}
       </Button>
 
       <Checkbox />

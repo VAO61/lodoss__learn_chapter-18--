@@ -4,7 +4,7 @@ import React from 'react';
 const Button = ({
   className = '',
   active = false,
-  // children,
+  children,
   onClick = () => {}
 }) => (
   <button
@@ -13,8 +13,8 @@ const Button = ({
     type={'button'}
     onClick={onClick} // addOrRemoveRepo(item)
   >
-    {active ? 'Remove from list' : 'Add to list'}
-    {/* {children} */}
+    {/* {active ? 'Remove from list' : 'Add to list'} */}
+    {children}
   </button>
 );
 
