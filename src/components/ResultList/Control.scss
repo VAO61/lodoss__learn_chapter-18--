@@ -1,15 +1,19 @@
+@import '../../assets/scss/variables.scss'; // TODO: Temp?
+
 .result-list-control {
-  width: 32px;
-  height: 32px;
-  margin-right: 12px;
-  opacity: 0.4;
+  &__item {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    opacity: 0.4;
 
-  &:last-child {
-    margin-right: 0;
-  }
+    &:last-child {
+      margin-right: 0;
+    }
 
-  &_active {
-    opacity: 1;
-    transition: opacity $time;
+    &_active {
+      opacity: 1;
+      transition: opacity $time;
+    }
   }
 }

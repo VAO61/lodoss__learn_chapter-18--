@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Button onClick={() => alert(1)}>default value</Button>
-      <Button className={'test-class'} active onClick={() => alert(3)}>
+      <Button className={'test-class'} active onClick={() => alert(2)}>
         default value
         {/* {active ? 'Remove from list' : 'Add to list'} */}
       </Button>
