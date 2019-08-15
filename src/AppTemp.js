@@ -6,6 +6,9 @@ import Button from './components/Button/Button';
 import Checkbox from './components/Checkbox/Checkbox';
 //
 import Select from './components/Select/Select';
+//
+import ResultList from './components/ResultList/ResultList';
+//
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
       <Checkbox active />
 
       <Select />
+      <ResultList />
     </div>
   );
 }
