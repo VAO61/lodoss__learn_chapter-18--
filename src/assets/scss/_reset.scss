@@ -1,9 +1,10 @@
 * {
   padding: 0;
-  margin: 0;
+  // margin: 0;
+  margin: 10px; // temporarily
   box-sizing: border-box;
   position: relative;
-  // color: $color-brand;
+  color: $color-brand;
 
   *::after,
   *::before {
