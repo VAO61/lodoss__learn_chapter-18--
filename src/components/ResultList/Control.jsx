@@ -1,4 +1,4 @@
-import '../../assets/scss/_btn.scss' // TODO: Temp?
+// import '../../assets/scss/_btn.scss' // TODO: Temp?
 import IconTile from '../../assets/img/icon-tile.svg';
 import IconList from '../../assets/img/icon-list.svg';
 import './Control.scss';

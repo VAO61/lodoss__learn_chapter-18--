@@ -1,5 +1,5 @@
 import './ResultList.scss';
-import '../../assets/scss/_container.scss'; // TODO: Temp?
+// import '../../assets/scss/_container.scss'; // TODO: Temp?
 import ResultListControl from './Control'; // TODO: TEMP in here !!!
 
 import React from 'react';
