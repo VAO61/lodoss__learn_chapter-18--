@@ -9,7 +9,7 @@ const Button = ({
 }) => (
   <button
     // TODO: не опnтимально, есть еще кнопка Search
-    className={`button button_${active ? 'sub-brand' : 'brand'} ${className}`}
+    className={`btn btn_${active ? 'sub-brand' : 'brand'} ${className}`}
     type={'button'}
     onClick={onClick} // addOrRemoveRepo(item)
   >
