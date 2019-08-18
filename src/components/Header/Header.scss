@@ -23,5 +23,10 @@
     &:last-child {
       margin-right: 0;
     }
+
+    &_active {
+      color: $color-bright;
+      cursor: default;
+    }
   }
 }

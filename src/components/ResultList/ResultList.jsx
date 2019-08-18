@@ -6,7 +6,6 @@ import React from 'react';
 
 const ResultList = ({}) => (
   <section className="container">
-    <ResultListControl className="result-list__control" />  {/* TODO: TEMP in here !!! */}
     {/* <ResultItem /> */}
   </section>
 );

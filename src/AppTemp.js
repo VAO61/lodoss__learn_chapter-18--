@@ -13,6 +13,8 @@ import Checkbox from './components/Checkbox/Checkbox';
 //
 import Search from './components/Search/Search';
 //
+import ResultListControl from './components/ResultList/Control'; // TODO: TEMP in here !!!
+//
 import ResultList from './components/ResultList/ResultList';
 //
 import Footer from './components/Footer/Footer';
@@ -24,6 +26,7 @@ function App() {
   return (
     <div className="app">
       <Header />
+      
       <section className="app__main">
         <Button onClick={() => alert(1)}>
           default value
@@ -37,8 +40,11 @@ function App() {
         <Checkbox active />
 
         <Search className={'container'} />
+
+        <ResultListControl className="result-list__control" />  {/* TODO: TEMP in here !!! */}
         <ResultList />
       </section>
+
       <Footer />
     </div>
   );
