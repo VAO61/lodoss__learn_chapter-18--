@@ -1,7 +1,9 @@
 import React  from 'react';
 
-const MyListPage = ({}) => (
-  <div>123</div>
+const MyListPage = ({
+  className = '',
+}) => (
+    <div className={`${className}`}>123</div>
 )
 
 export default MyListPage;

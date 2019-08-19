@@ -3,11 +3,13 @@ import Search from '../components/Search/Search';
 import ResultList from '../components/ResultList/ResultList';
 import ResultListControl from '../components/ResultList/Control';
 
-const SearchPage = ({ }) => (
+const SearchPage = ({ 
+  className = '',
+}) => (
   <Fragment>
-    <Search className={'container'} />
+    <Search className={`${className} container`} />
     <ResultListControl className="result-list__control container" />  {/* TODO: TEMP in here !!! */}
-    <ResultList />
+    <ResultList className={'app__main container'}/>
   </Fragment>
 )
 

@@ -1,7 +1,9 @@
 import React from 'react';
 
-const NotFoundPage = ({ }) => (
-  <div>Page not found.</div>
+const NotFoundPage = ({
+  className = '',
+ }) => (
+    <section className={`${className}`}>Page not found.</section >
 )
 
 export default NotFoundPage;

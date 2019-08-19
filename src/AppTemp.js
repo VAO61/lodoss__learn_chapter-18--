@@ -7,9 +7,9 @@ import browserHistory from './browserHistory';
 // import logo from './logo.svg';
 import Header from './components/Header/Header';
 //
-import Button from './components/Button/Button';
+// import Button from './components/Button/Button';
 //
-import Checkbox from './components/Checkbox/Checkbox';
+// import Checkbox from './components/Checkbox/Checkbox';
 //
 // import Select from './components/Select/Select';
 //
