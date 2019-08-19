@@ -1,7 +1,9 @@
 import './assets/scss/style.scss';
 import './App.scss';
 
-import React from 'react';
+import React from 'react'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import browserHistory from './browserHistory';
 // import logo from './logo.svg';
 import Header from './components/Header/Header';
 //
@@ -11,7 +13,12 @@ import Checkbox from './components/Checkbox/Checkbox';
 //
 // import Select from './components/Select/Select';
 //
-import Search from './components/Search/Search';
+// import Search from './components/Search/Search';
+
+import MyList from './pages/MyList';
+//
+import Search from './pages/Search';
+import NotFound from './pages/NotFound';
 //
 import ResultListControl from './components/ResultList/Control'; // TODO: TEMP in here !!!
 //
@@ -21,33 +28,46 @@ import Footer from './components/Footer/Footer';
 //
 
 function App() {
-  const state = true;
+  // const state = true;
+  // render() {
+    return (
+      <Router history={browserHistory}>
+        <div className="app">
+          <Header className="app__header"/>
+            <Switch>
+              <Route path="/" exact component={Search} />
+              <Route path="/search" component={Search}/>
+              <Route path="/my-list" component={MyList}/>
+              <Route path="*" component={NotFound}/>
+            </Switch>
+         <Footer className="app__footer"/>
+        </div>
+      </Router>
+      // <div className="app">
+       //   <Header className="app__header"/> */}
 
-  return (
-    <div className="app">
-      <Header className="app__header"/>
+      //   <section className="app__main">
+      //     <Button onClick={() => alert(1)}>
+      //       default value
+      //     </Button>
+      //     <Button className={'test-class'} active={state} onClick={() => alert(2)}>
+      //       {/* default value */}
+      //       {state ? 'Remove from list' : 'Add to list'}
+      //     </Button>
 
-      <section className="app__main">
-        <Button onClick={() => alert(1)}>
-          default value
-        </Button>
-        <Button className={'test-class'} active={state} onClick={() => alert(2)}>
-          {/* default value */}
-          {state ? 'Remove from list' : 'Add to list'}
-        </Button>
+      //     <Checkbox />
+      //     <Checkbox active />
 
-        <Checkbox />
-        <Checkbox active />
+      //     <Search className={'container'} />
 
-        <Search className={'container'} />
+      //     <ResultListControl className="result-list__control" />  {/* TODO: TEMP in here !!! */}
+      //     <ResultList />
+      //   </section>
 
-        <ResultListControl className="result-list__control" />  {/* TODO: TEMP in here !!! */}
-        <ResultList />
-      </section>
-
-      <Footer className="app__footer"/>
-    </div>
-  );
+      //   <Footer className="app__footer"/>
+      // </div>
+    );
+  // }
 }
 
 export default App;

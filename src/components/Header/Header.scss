@@ -24,7 +24,7 @@
       margin-right: 0;
     }
 
-    &_active {
+    &.active {
       color: $color-bright;
       cursor: default;
     }
