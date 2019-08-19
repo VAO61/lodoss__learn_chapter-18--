@@ -15,14 +15,14 @@ import Checkbox from './components/Checkbox/Checkbox';
 //
 // import Search from './components/Search/Search';
 
-import MyList from './pages/MyList';
+import MyListPage from './pages/MyListPage';
 //
-import Search from './pages/Search';
-import NotFound from './pages/NotFound';
+import SearchPage from './pages/SearchPage';
+import NotFoundPage from './pages/NotFoundPage';
 //
-import ResultListControl from './components/ResultList/Control'; // TODO: TEMP in here !!!
+// import ResultListControl from './components/ResultList/Control'; // TODO: TEMP in here !!!
 //
-import ResultList from './components/ResultList/ResultList';
+// import ResultList from './components/ResultList/ResultList';
 //
 import Footer from './components/Footer/Footer';
 //
@@ -35,10 +35,10 @@ function App() {
         <div className="app">
           <Header className="app__header"/>
             <Switch>
-              <Route path="/" exact component={Search} />
-              <Route path="/search" component={Search}/>
-              <Route path="/my-list" component={MyList}/>
-              <Route path="*" component={NotFound}/>
+              <Route path="/" exact component={SearchPage} />
+              <Route path="/search" component={SearchPage}/>
+              <Route path="/my-list" component={MyListPage}/>
+              <Route path="*" component={NotFoundPage}/>
             </Switch>
          <Footer className="app__footer"/>
         </div>
