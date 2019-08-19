@@ -22,10 +22,10 @@ const ResultListControl = ({
 }) => (
     <section className={`${className} result-list-control`}>
       <Button active onClick={() => alert('Tile')}>
-        <img src={IconTile} />
+        <img src={IconTile} alt="icon tile"/>
       </Button>
       <Button onClick={() => alert('List')}>
-        <img src={IconList} />
+        <img src={IconList} alt="icon list" />
       </Button>
   </section >
 )

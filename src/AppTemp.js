@@ -25,8 +25,8 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-      
+      <Header className="app__header"/>
+
       <section className="app__main">
         <Button onClick={() => alert(1)}>
           default value
@@ -45,7 +45,7 @@ function App() {
         <ResultList />
       </section>
 
-      <Footer />
+      <Footer className="app__footer"/>
     </div>
   );
 }
