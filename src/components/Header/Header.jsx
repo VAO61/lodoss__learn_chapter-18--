@@ -5,14 +5,18 @@ import GitHubSearchLogo from '../../assets/img/github-search-logo.svg';
 import classNames from 'classnames';
 
 const Header = ({ className = '' }) => (
+  /**
+   * TODO: Utility 'classNames' usage
+   * https://github.com/JedWatson/classnames
+   */
   <header className={classNames(className, 'header')}>
     <Link to="/" className="link">
-      <img class="header__logo" alt="header logo" src={GitHubSearchLogo} />
+      <img className="header__logo" alt="header logo" src={GitHubSearchLogo} />
     </Link>
     {/* <a href="/" class="link">
       <img class="header__logo" alt="header logo" src={GitHubSearchLogo} />
     </a> */}
-    <div class="header__item header__control">
+    <div className="header__item header__control">
       <NavLink to="/search" className="link link_tdn header__link">
         Search
       </NavLink>
