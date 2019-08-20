@@ -1,13 +1,34 @@
 import './Search.scss';
 import React from 'react';
 import Select from '../Select/Select';
-import getJSON from '../../api/getJSON';
+// import Select from 'react-select';
+// import getJSON from '../../api/getJSON';
 
-//
+// const options = [
+//   { value: 'One', label: 'One' },
+//   { value: 'Two', label: 'Two' },
+//   { value: 'Three', label: 'Three' }
+// ];
 
-const Search = ({ className = '' }) => (
+// const { selectedOption } = this.state;
+
+const Search = ({
+  className = ''
+  // state = {
+  //   selectedOption: null
+  // },
+  // handleChange = selectedOption => {
+  //   this.setState({ selectedOption });
+  //   console.log(`Option selected:`, selectedOption);
+  // }
+}) => (
   <section className={`${className} search`}>
     <div className="search__item">
+      {/* <Select
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={options}
+      /> */}
       <Select className="search__select" />
       {/* props */}
       {/* <select className="form__select" v-model="typeValue" id="selectType">
