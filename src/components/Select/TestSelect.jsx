@@ -7,6 +7,8 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' }
 ];
 
+const placeholder = 'Type / Language';
+
 class TestSelect extends React.Component {
   state = {
     selectedOption: null
@@ -23,6 +25,7 @@ class TestSelect extends React.Component {
         value={selectedOption}
         onChange={this.handleChange}
         options={options}
+        placeholder={placeholder}
       />
     );
   }

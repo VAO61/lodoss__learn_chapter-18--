@@ -7,7 +7,7 @@ import browserHistory from './browserHistory';
 // import logo from './logo.svg';
 import Header from './components/Header/Header';
 //
-import TestSelect from './components/Select/TestSelect';
+// import TestSelect from './components/Select/TestSelect';
 //
 // import Button from './components/Button/Button';
 //
@@ -36,7 +36,7 @@ function App() {
     <Router history={browserHistory}>
       <div className="app">
         <Header className="app__header" />
-        <TestSelect />
+        {/* <TestSelect /> */}
         <Switch>
           <Route path="/" exact component={SearchPage} />
           <Route path="/search" component={SearchPage} />

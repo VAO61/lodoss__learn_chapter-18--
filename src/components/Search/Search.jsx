@@ -1,6 +1,9 @@
 import './Search.scss';
 import React from 'react';
-import Select from '../Select/Select';
+// import Select from '../Select/Select_';
+// import TestSelect from '../Select/TestSelect';
+import Select from 'react-select';
+
 // import Select from 'react-select';
 // import getJSON from '../../api/getJSON';
 
@@ -29,7 +32,21 @@ const Search = ({
         onChange={this.handleChange}
         options={options}
       /> */}
-      <Select className="search__select" />
+      <Select
+        className="search__select"
+        options={[{ value: 'Repositories', label: 'Repositories' }]}
+        defaultValue="Repositories"
+        // defaultMenuIsOpen
+        defaultInputValue="Repositories"
+        placeholder="Type"
+      />
+      {/* <TestSelect
+        className="search__select"
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={options}
+        placeholder={placeholder}
+      /> */}
       {/* props */}
       {/* <select className="form__select" v-model="typeValue" id="selectType">
           <option
@@ -42,7 +59,23 @@ const Search = ({
       <label className="form__label" for="selectType">Type</label> */}
     </div>
     <div className="search__item">
-      <Select className="search__select" />
+      <Select
+        className="search__select"
+        options={[
+          { value: 'Javascript', label: 'Javascript' },
+          { value: 'CSS', label: 'CSS' },
+          { value: 'HTML', label: 'HTML' },
+          { value: 'PHP', label: 'PHP' },
+          { value: 'Ruby', label: 'Ruby' },
+          { value: 'C++', label: 'C++' },
+          { value: 'Python', label: 'Python' },
+          { value: 'C#', label: 'C#' },
+          { value: 'Java', label: 'Java' },
+          { value: 'Go', label: 'Go' },
+          { value: 'Haskel', label: 'Haskel' }
+        ]}
+        placeholder="Language"
+      />
       {/* props */}
       {/*<select className="form__select" v-model="languageValue" id="selectLanguage">
          <option
