@@ -74,6 +74,7 @@ const Search = ({
           { value: 'Go', label: 'Go' },
           { value: 'Haskel', label: 'Haskel' }
         ]}
+        defaultInputValue=""
         placeholder="Language"
       />
       {/* props */}
