@@ -2,8 +2,8 @@ import './Search.scss';
 // import ''
 import React from 'react';
 // import Select from '../Select/Select_';
-import Select from 'react-select';
-import SelectCustom from '../Select/SelectCustom';
+// import Select from 'react-select';
+import Select from '../Select/Select';
 
 // import Select from 'react-select';
 // import getJSON from '../../api/getJSON';
@@ -36,7 +36,7 @@ const Search = ({
         defaultInputValue="Repositories"
         placeholder="Type"
       /> */}
-      <SelectCustom
+      <Select
         options={[{ value: 'Repositories', label: 'Repositories' }]}
         // TODO _!important: перестало передавать default value
         defaultValue="Repositories"

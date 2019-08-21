@@ -1,9 +1,9 @@
 import React from 'react';
-import Select from 'react-select';
+import ReactSelect from 'react-select';
 
 const placeholder = 'Type / Language';
 
-class SelectCustom extends React.Component {
+class Select extends React.Component {
   state = {
     selectedOption: null
   };
@@ -18,7 +18,7 @@ class SelectCustom extends React.Component {
     const { defaultInputValue } = this.props;
 
     return (
-      <Select
+      <ReactSelect
         className="search__select select"
         classNamePrefix="select"
         value={selectedOption}
@@ -32,4 +32,4 @@ class SelectCustom extends React.Component {
   }
 }
 
-export default SelectCustom;
+export default Select;
