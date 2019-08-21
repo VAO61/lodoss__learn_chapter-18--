@@ -1,17 +1,10 @@
 import './Search.scss';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Select from '../Select/Select';
 import getJSON from '../../api/getJSON';
 
 const Search = ({
   className = '',
-  isDisableSearch = () => {
-    return (
-      this.searchValue === '' ||
-      this.typeValue === '' ||
-      this.languageValue === ''
-    );
-  },
   getData = async () => {
     if (this.isDisableSearch) {
       return;
@@ -31,6 +24,20 @@ const Search = ({
   const [lang, setLang] = useState('')
   const [searchValue, setSearchValue] = useState('')
 
+  // react-хуки
+  const handleClickSearch = useCallback(() => {
+    console.log(type);
+    console.log(lang);
+    console.log(searchValue);    
+  }, [type, lang, searchValue])
+
+  const handleChangeType = useCallback((data) => setType(data.value), [])
+  const handleChangeLang = useCallback((data) => setLang(data.value), [])
+  const handleChangeSearchValue = useCallback((e) => setSearchValue(e.target.value), [])
+
+
+  const isDisableSearch = type === '' || lang === '' || searchValue === '';
+
   return (
     <section className={`${className} search`}>
       <div className="search__item">
@@ -38,7 +45,7 @@ const Search = ({
           options={[{ value: 'Repositories', label: 'Repositories' }]}
           // value={type}
           // defaultValue={type}
-          onChange={(data) => setType(data.value)}
+          onChange={handleChangeType}
           defaultInputValue={type}
           placeholder="Type"
           />
@@ -58,7 +65,7 @@ const Search = ({
             { value: 'Go', label: 'Go' },
             { value: 'Haskel', label: 'Haskel' }
           ]}
-          onChange={(data) => setLang(data.value)}
+          onChange={handleChangeLang}
           defaultInputValue={lang}
           // defaultInputValue=""
           placeholder="Language"
@@ -66,12 +73,12 @@ const Search = ({
       </div>
       <div className="search__item">
         
-        <input className="search__input" type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+        <input className="search__input" type="text" value={searchValue} onChange={handleChangeSearchValue}/>
         {/* <label className="form__label" for="typeForSearch">
         Type here for search
       </label>{' '} */}
       </div>
-      <button className="search__submit btn btn_brand" disabled={isDisableSearch}>
+      <button className="search__submit btn btn_brand" disabled={isDisableSearch} onClick={handleClickSearch}>
         search
     </button>
     </section>
