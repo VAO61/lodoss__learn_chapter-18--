@@ -30,4 +30,11 @@
     padding: 7px 0;
     min-height: 36px;
   }
+
+  &__submit {
+    &[disabled] {
+      background-color: grey;
+      cursor: default;
+    }
+  }
 }
