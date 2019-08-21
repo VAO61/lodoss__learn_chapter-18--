@@ -1,8 +1,5 @@
 import './Search.scss';
-// import ''
 import React from 'react';
-// import Select from '../Select/Select_';
-// import Select from 'react-select';
 import Select from '../Select/Select';
 
 // import Select from 'react-select';

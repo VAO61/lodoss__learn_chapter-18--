@@ -1,7 +1,55 @@
-@import '../../assets/scss/variables.scss'; // TODO: Temp?
+// &#{$defaultClass}
+
+$defaultClass: "[class*='css-']";
 
 .select {
-  &__container {
-    // display: none;
+  padding: 0;
+  &#{$defaultClass} {
+    appearance: none;
+    outline: none;
+  }
+
+  &__control {
+    &#{$defaultClass} {
+      background-color: inherit;
+      border: none;
+      min-height: inherit;
+      appearance: none;
+      outline: none;
+      box-shadow: none;
+
+      &:hover {
+        appearance: none;
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__value-container {
+    &#{$defaultClass} {
+      padding: 0;
+    }
+  }
+
+  &__placeholder,
+  &__single-value {
+    &#{$defaultClass} {
+      color: $color-text;
+      margin: 0;
+    }
+  }
+
+  &__dropdown-indicator {
+    &#{$defaultClass} {
+      color: inherit;
+    }
+  }
+
+  &__indicator-separator {
+    &#{$defaultClass} {
+      display: none;
+    }
   }
 }

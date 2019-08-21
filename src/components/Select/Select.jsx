@@ -1,7 +1,6 @@
+import './Select.scss';
 import React from 'react';
 import ReactSelect from 'react-select';
-
-const placeholder = 'Type / Language';
 
 class Select extends React.Component {
   state = {
@@ -16,6 +15,7 @@ class Select extends React.Component {
     const { selectedOption } = this.state;
     const { defaultValue } = this.props;
     const { defaultInputValue } = this.props;
+    const { placeholder } = this.props;
 
     return (
       <ReactSelect
