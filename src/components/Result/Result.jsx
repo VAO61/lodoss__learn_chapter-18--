@@ -2,11 +2,11 @@ import './Result.scss';
 import React, { Fragment } from 'react';
 import IconStar from '../../assets/img/icon-star.svg';
 
-const Result = ({ className = '' }) => (
+const Result = ({ className = '', id, full_name, language }) => (
   <Fragment>
-    <div className={`${className} result`}>
+    <div className={`${className} result`} id={id}>
       <div className="`result__details result-details`">
-        <p className="result-details__language">item.language</p>
+        <p className="result-details__language">{language}</p>
       </div>
       <div className="result-details__stars-container">
         <img className="result-details__icon" src={IconStar} alt="icon star" />
@@ -16,7 +16,7 @@ const Result = ({ className = '' }) => (
       <div className="result-item__main">
         {/* link.url */}
         <a href="#nead-a-link-repo" className="lnk result-item__link">
-          <p className="result-item__title">item.full_name</p>
+          <p className="result-item__title">{full_name}</p>
         </a>
         <p className="result-item__desc">item.description</p>
         <div className="result-item__tags">

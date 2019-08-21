@@ -2,10 +2,11 @@ import './Search.scss';
 import React, { useState, useCallback } from 'react';
 import Select from '../Select/Select';
 import getJSON from '../../api/getJSON';
-import store from '../../store/store'
+// import store from '../../store/store'
 import { updateSearchList } from '../../store/actions'
+import { connect } from 'react-redux'
 
-const Search = ({ className = '' }) => {
+const Search = ({ className = '', updateResultSearch }) => {
   // react-хуки
   const [type, setType] = useState('Repositories')
   const [lang, setLang] = useState('')
@@ -14,7 +15,9 @@ const Search = ({ className = '' }) => {
   // react-хуки
   const handleClickSearch = useCallback(async () => {
     const { data } = await getJSON(type, searchValue, lang);
-    store.dispatch(updateSearchList(data.items))
+    updateResultSearch(data.items);
+    // dispatch(updateSearchList(data.items))
+    // store.dispatch(updateSearchList(data.items))
   }, [type, lang, searchValue])
 
   const handleChangeType = useCallback((data) => setType(data.value), [])
@@ -70,4 +73,9 @@ const Search = ({ className = '' }) => {
   )
 };
 
-export default Search;
+const mapDispatchToProps = (dispatch) => ({
+  updateResultSearch: (array) => dispatch(updateSearchList(array))
+})
+
+
+export default connect(null, mapDispatchToProps)(Search);

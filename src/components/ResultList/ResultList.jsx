@@ -12,14 +12,16 @@ const ResultList = ({ className = '', searchList }) => {
   return (
     <main className={className}>
       <section className={`${className} result-list`}>
-        <Result className="result-list__result" />
+        {searchList.map(item => (
+          <Result className="result-list__result" key={item.id} {...item} />
+        ))}
       </section>
     </main>
   )
 };
 
 const mapStateToProps = (state) => ({
-  searchList: state.searchList
+  searchList: state.searchList.slice(0, 6)
 })
 
 export default connect(mapStateToProps)(ResultList);
