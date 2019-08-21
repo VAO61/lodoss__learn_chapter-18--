@@ -1,15 +1,9 @@
 import React from 'react';
 import Select from 'react-select';
 
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-];
-
 const placeholder = 'Type / Language';
 
-class TestSelect extends React.Component {
+class SelectCustom extends React.Component {
   state = {
     selectedOption: null
   };
@@ -18,17 +12,24 @@ class TestSelect extends React.Component {
     // console.log(`Option selected:`, selectedOption);
   };
   render() {
+    const { options } = this.props;
     const { selectedOption } = this.state;
+    const { defaultValue } = this.props;
+    const { defaultInputValue } = this.props;
 
     return (
       <Select
+        className="search__select select"
+        classNamePrefix="select"
         value={selectedOption}
         onChange={this.handleChange}
         options={options}
         placeholder={placeholder}
+        defaultValue={defaultValue}
+        defaultInputValue={defaultInputValue}
       />
     );
   }
 }
 
-export default TestSelect;
+export default SelectCustom;

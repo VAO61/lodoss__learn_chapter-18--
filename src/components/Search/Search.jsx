@@ -1,8 +1,9 @@
 import './Search.scss';
+// import ''
 import React from 'react';
 // import Select from '../Select/Select_';
-// import TestSelect from '../Select/TestSelect';
 import Select from 'react-select';
+import SelectCustom from '../Select/SelectCustom';
 
 // import Select from 'react-select';
 // import getJSON from '../../api/getJSON';
@@ -28,39 +29,27 @@ const Search = ({
   <section className={`${className} search`}>
     <div className="search__item">
       {/* <Select
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
-      /> */}
-      <Select
         className="search__select"
         options={[{ value: 'Repositories', label: 'Repositories' }]}
         defaultValue="Repositories"
         // defaultMenuIsOpen
         defaultInputValue="Repositories"
         placeholder="Type"
-      />
-      {/* <TestSelect
-        className="search__select"
-        value={selectedOption}
-        onChange={this.handleChange}
-        options={options}
-        placeholder={placeholder}
       /> */}
-      {/* props */}
-      {/* <select className="form__select" v-model="typeValue" id="selectType">
-          <option
-            className="form__option"
-            v-for="option in typeList"
-            v-bind: key="option"
-          :value="option"
-          >{{ option }}</option>
-        </select>
-      <label className="form__label" for="selectType">Type</label> */}
+      <SelectCustom
+        options={[{ value: 'Repositories', label: 'Repositories' }]}
+        // TODO _!important: перестало передавать default value
+        defaultValue="Repositories"
+        // defaultInputValue="Repositories"
+        defaultInputValue="Repositories"
+        placeholder="Type"
+      />
     </div>
     <div className="search__item">
       <Select
-        className="search__select"
+        // className="search__select"
+        // className="select"
+        // classNamePrefix="select"
         options={[
           { value: 'Javascript', label: 'Javascript' },
           { value: 'CSS', label: 'CSS' },
