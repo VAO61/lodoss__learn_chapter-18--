@@ -3,26 +3,22 @@ import React from 'react';
 import ReactSelect from 'react-select';
 
 class Select extends React.Component {
-  state = {
-    selectedOption: null
-  };
-  handleChange = selectedOption => {
-    this.setState({ selectedOption });
-    // console.log(`Option selected:`, selectedOption);
-  };
+  // state = {
+  //   selectedOption: null
+  // };
+  // handleChange = selectedOption => {
+  //   this.setState({ selectedOption });
+  //   // console.log(`Option selected:`, selectedOption);
+  // };
   render() {
-    const { options } = this.props;
-    const { selectedOption } = this.state;
-    const { defaultValue } = this.props;
-    const { defaultInputValue } = this.props;
-    const { placeholder } = this.props;
+    const { options, defaultValue, defaultInputValue, placeholder, onChange } = this.props;
 
     return (
       <ReactSelect
         className="search__select select"
         classNamePrefix="select"
-        value={selectedOption}
-        onChange={this.handleChange}
+        // value={value}
+        onChange={onChange}
         options={options}
         placeholder={placeholder}
         defaultValue={defaultValue}
