@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const getJSON = function({ type = 'repositories', searchValue, lang }) {
+const getJSON = function(type, searchValue, lang) {
+  if (!type || !searchValue || !lang) {
+    throw new Error('Some Error text')
+  }
+
   return axios.get(
     `https://api.github.com/search/${type}?q=${searchValue}+language:${lang}&sort=stars&order=desc`,
     {

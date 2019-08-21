@@ -2,47 +2,32 @@ import './Search.scss';
 import React, { useState, useCallback } from 'react';
 import Select from '../Select/Select';
 import getJSON from '../../api/getJSON';
+import store from '../../store/store'
+import { updateSearchList } from '../../store/actions'
 
-const Search = ({
-  className = '',
-  getData = async () => {
-    if (this.isDisableSearch) {
-      return;
-    }
-
-    const { data } = await getJSON({
-      type: this.typeValue,
-      searchValue: this.searchValue,
-      lang: this.languageValue
-    });
-    this.$store.commit('updateItems', data.items);
-  }
-  // console.log('object')
-}) => {
+const Search = ({ className = '' }) => {
   // react-хуки
   const [type, setType] = useState('Repositories')
   const [lang, setLang] = useState('')
   const [searchValue, setSearchValue] = useState('')
 
   // react-хуки
-  const handleClickSearch = useCallback(() => {
-    console.log(type);
-    console.log(lang);
-    console.log(searchValue);    
+  const handleClickSearch = useCallback(async () => {
+    const { data } = await getJSON(type, searchValue, lang);
+    store.dispatch(updateSearchList(data.items))
   }, [type, lang, searchValue])
 
   const handleChangeType = useCallback((data) => setType(data.value), [])
   const handleChangeLang = useCallback((data) => setLang(data.value), [])
   const handleChangeSearchValue = useCallback((e) => setSearchValue(e.target.value), [])
-
-
+  
   const isDisableSearch = type === '' || lang === '' || searchValue === '';
 
   return (
     <section className={`${className} search`}>
       <div className="search__item">
         <Select
-          options={[{ value: 'Repositories', label: 'Repositories' }]}
+          options={[{ value: 'repositories', label: 'Repositories' }]}
           // value={type}
           // defaultValue={type}
           onChange={handleChangeType}

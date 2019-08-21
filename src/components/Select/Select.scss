@@ -52,4 +52,13 @@ $defaultClass: "[class*='css-']";
       display: none;
     }
   }
+
+  &__input {
+    > input {
+      width: 100% !important;
+    }
+    // &[id*='react-select-'] {
+    // &[class*='react-select-'] {
+    // }
+  }
 }
