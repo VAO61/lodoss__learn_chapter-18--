@@ -1,34 +1,50 @@
 import './Result.scss';
-import React, { Fragment } from 'react';
+import React from 'react';
 import IconStar from '../../assets/img/icon-star.svg';
+import Checkbox from '../Checkbox/Checkbox';
 
-const Result = ({ className = '', id, full_name, language }) => (
-  <Fragment>
+const Result = ({
+  className,
+  id,
+  full_name,
+  language,
+  stargazers_count,
+  description,
+  html_url,
+  topics
+}) => {
+  return (
     <div className={`${className} result`} id={id}>
-      <div className="`result__details result-details`">
-        <p className="result-details__language">{language}</p>
+      <div className={`result__add-remove`}>
+        <Checkbox />
+        {/* TODO: state -> Add / Remove */}
+        <Checkbox active />
       </div>
-      <div className="result-details__stars-container">
-        <img className="result-details__icon" src={IconStar} alt="icon star" />
-        {/* <IconStar  /> */}
-        <p className="result-details__count">item.stargazers_count</p>
-      </div>
-      <div className="result-item__main">
-        {/* link.url */}
-        <a href="#nead-a-link-repo" className="lnk result-item__link">
-          <p className="result-item__title">{full_name}</p>
-        </a>
-        <p className="result-item__desc">item.description</p>
-        <div className="result-item__tags">
-          <span className="result-item__tag">tag</span>
+      <div className="result__main">
+        <p className="result__title">
+          <a href={html_url} className="lnk result__link">
+            {full_name}
+          </a>
+        </p>
+        <p className="result__desc">{description}</p>
+        <div className="result__tags">
+          {topics &&
+            topics.map(tag => <span className="result__tag">{tag}</span>)}
         </div>
       </div>
-      <div className={`result__add-remove`}>
-        {/* <button @click="addOrRemoveRepo(item)" :class="`btn checkbox result__checkbox ${getClassNameActive(item.id)}`" type="checkbox" />
-        <button @click="addOrRemoveRepo(item)" :class="`btn btn_brand result__button ${getClassNameActive(item.id)}`">{{ getButtonText(item.id)}}</button> */}
+      <div className="result__details result-details">
+        <p className="result-details__language">{language}</p>
+        <div className="result-details__stars-container">
+          <img
+            className="result-details__icon"
+            src={IconStar}
+            alt="icon star"
+          />
+          <p className="result-details__count">{stargazers_count}</p>
+        </div>
       </div>
     </div>
-  </Fragment>
-);
+  );
+};
 
 export default Result;

@@ -11,8 +11,6 @@ import Header from './components/Header/Header';
 //
 // import Button from './components/Button/Button';
 //
-// import Checkbox from './components/Checkbox/Checkbox';
-//
 // import Select from './components/Select/Select';
 //
 // import Search from './components/Search/Search';
@@ -57,9 +55,6 @@ function App() {
     //       {/* default value */}
     //       {state ? 'Remove from list' : 'Add to list'}
     //     </Button>
-
-    //     <Checkbox />
-    //     <Checkbox active />
 
     //     <Search className={'container'} />
 

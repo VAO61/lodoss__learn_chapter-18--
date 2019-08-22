@@ -9,7 +9,7 @@ const Checkbox = ({
   }
 }) => (
   <button
-    className={`checkbox checkbox_${active ? 'active' : ''}`}
+    className={`checkbox ${active ? 'checkbox_active' : ''}`}
     type="button"
     onClick={onClick} // addOrRemoveRepo(item)
   />
