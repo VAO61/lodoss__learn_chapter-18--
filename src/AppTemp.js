@@ -34,7 +34,6 @@ function App() {
     <Router history={browserHistory}>
       <div className="app">
         <Header className="app__header" />
-        {/* <TestSelect /> */}
         <Switch>
           <Route path="/" exact component={SearchPage} />
           <Route path="/search" component={SearchPage} />

@@ -31,7 +31,7 @@ const Search = ({ className = '', updateResultSearch }) => {
       <div className="search__item">
         <Select
           options={[{ value: 'repositories', label: 'Repositories' }]}
-          // value={type}
+          value={type}
           // defaultValue={type}
           onChange={handleChangeType}
           defaultInputValue={type}
