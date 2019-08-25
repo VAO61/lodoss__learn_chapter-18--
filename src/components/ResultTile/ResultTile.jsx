@@ -3,8 +3,15 @@ import React from 'react';
 import IconStar from '../../assets/img/icon-star.svg';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
+import { addToMyList, removeFromMyList } from '../../store/actions';
 
-const Result = ({ className, item, isExists }) => {
+const Result = ({
+  className,
+  item,
+  isExists,
+  addToMyList,
+  removeFromMyList
+}) => {
   return (
     <div className={`${className} result-tile`} id={item.id}>
       <div className="result-tile__details result-details">
@@ -34,9 +41,11 @@ const Result = ({ className, item, isExists }) => {
       </div>
       <div className={`result-tile__add-remove`}>
         {isExists ? (
-          <Button type="sub-brand">Remove from list</Button>
+          <Button type="sub-brand" onClick={removeFromMyList(item.id)}>
+            Remove from list
+          </Button>
         ) : (
-          <Button>Add to list</Button>
+          <Button onClick={addToMyList(item)}>Add to list</Button>
         )}
       </div>
     </div>
@@ -47,4 +56,12 @@ const mapStateToProps = (state, props) => ({
   isExists: !!state.myList.find(item => item.id === props.item.id)
 });
 
-export default connect(mapStateToProps)(Result);
+const mapDispatchToProps = dispatch => ({
+  addToMyList: item => () => dispatch(addToMyList(item)),
+  removeFromMyList: id => () => dispatch(removeFromMyList(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Result);

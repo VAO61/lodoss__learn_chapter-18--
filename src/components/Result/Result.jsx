@@ -3,12 +3,22 @@ import React from 'react';
 import IconStar from '../../assets/img/icon-star.svg';
 import Checkbox from '../Checkbox/Checkbox';
 import { connect } from 'react-redux';
+import { addToMyList, removeFromMyList } from '../../store/actions';
 
-const Result = ({ className, item, isExists }) => {
+const Result = ({
+  className,
+  item,
+  isExists,
+  addToMyList,
+  removeFromMyList
+}) => {
   return (
     <div className={`${className} result`} id={item.id}>
       <div className={`result__add-remove`}>
-        <Checkbox active={isExists} />
+        <Checkbox
+          active={isExists}
+          onClick={isExists ? removeFromMyList(item.id) : addToMyList(item)}
+        />
       </div>
       <div className="result__main">
         <p className="result__title">
@@ -41,4 +51,12 @@ const mapStateToProps = (state, props) => ({
   isExists: !!state.myList.find(item => item.id === props.item.id)
 });
 
-export default connect(mapStateToProps)(Result);
+const mapDispatchToProps = dispatch => ({
+  addToMyList: item => () => dispatch(addToMyList(item)),
+  removeFromMyList: id => () => dispatch(removeFromMyList(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Result);

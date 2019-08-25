@@ -10,9 +10,9 @@ export const updateSearchList = payload => ({
   payload
 });
 
-export const addToMyList = payload => ({
+export const addToMyList = item => ({
   type: ADD_TO_MY_LIST,
-  payload
+  payload: item
 });
 
 export const removeFromMyList = id => ({
