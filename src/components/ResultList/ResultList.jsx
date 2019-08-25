@@ -6,7 +6,7 @@ import React from 'react';
  * TODO: : ___ ? searchList : myList
  */
 // const ResultList = ({ className = '', searchList }) => {
-const ResultList = ({ className = '', list }) => {
+const ResultList = ({ className = '', list, theme }) => {
   // console.log(searchList);
 
   return (
@@ -16,14 +16,17 @@ const ResultList = ({ className = '', list }) => {
         {' '}
         {/* if {tile} */}
         {/* {searchList.map(item => ( */}
-        {list.map(item => (
-          // <Result className="result-list__result" key={item.id} {...item} />
-          <ResultTile
-            className="result-list-tile__result"
-            key={item.id}
-            {...item}
-          />
-        ))}
+        {list.map(item =>
+          theme === 'list' ? (
+            <Result className="result-list__result" key={item.id} {...item} />
+          ) : (
+            <ResultTile
+              className={'result-list-tile__result'}
+              key={item.id}
+              {...item}
+            />
+          )
+        )}
       </section>
     </main>
   );
