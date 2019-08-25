@@ -28,6 +28,10 @@ import Footer from './components/Footer/Footer';
 //
 
 function App() {
+  if (browserHistory.location.pathname === '/') {
+    browserHistory.push('/search');
+  }
+
   // const state = true;
   // render() {
   return (
@@ -35,7 +39,7 @@ function App() {
       <div className="app">
         <Header className="app__header" />
         <Switch>
-          <Route path="/" exact component={SearchPage} />
+          {/* <Route path="/" exact component={SearchPage} /> */}
           <Route path="/search" component={SearchPage} />
           <Route path="/my-list" component={MyListPage} />
           <Route path="*" component={NotFoundPage} />

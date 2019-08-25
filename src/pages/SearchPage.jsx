@@ -8,13 +8,18 @@ import { connect } from 'react-redux';
 const SearchPage = ({ className = '', searchList, theme }) => (
   <Fragment>
     <Search className={`${className} container`} />
-    {/* <NoResult className={'app__main'} /> if searchList.length */}
-    <ResultListControl className="result-list__control container" />{' '}
-    <ResultList
-      className={'app__main container'}
-      list={searchList}
-      theme={theme}
-    />
+    {searchList.length === 0 ? (
+      <NoResult className={'app__main'} />
+    ) : (
+      <Fragment>
+        <ResultListControl className="result-list__control container" />{' '}
+        <ResultList
+          className={'app__main container'}
+          list={searchList}
+          theme={theme}
+        />
+      </Fragment>
+    )}
   </Fragment>
 );
 

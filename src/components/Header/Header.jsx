@@ -10,7 +10,7 @@ const Header = ({ className = '' }) => (
    * https://github.com/JedWatson/classnames
    */
   <header className={classNames(className, 'header')}>
-    <Link to="/" className="link">
+    <Link to="/search" className="link">
       <img className="header__logo" alt="header logo" src={GitHubSearchLogo} />
     </Link>
     {/* <a href="/" class="link">

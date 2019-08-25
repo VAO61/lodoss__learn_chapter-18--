@@ -27,6 +27,14 @@ const Search = ({ className = '', updateResultSearch }) => {
     e => setSearchValue(e.target.value),
     []
   );
+  const handleKeyDown = useCallback(
+    e => {
+      if (e.keyCode === 13) {
+        handleClickSearch();
+      }
+    },
+    [type, lang, searchValue]
+  );
 
   const isDisableSearch = type === '' || lang === '' || searchValue === '';
 
@@ -69,6 +77,7 @@ const Search = ({ className = '', updateResultSearch }) => {
           type="text"
           value={searchValue}
           onChange={handleChangeSearchValue}
+          onKeyDown={handleKeyDown}
         />
         {/* <label className="form__label" for="typeForSearch">
         Type here for search
