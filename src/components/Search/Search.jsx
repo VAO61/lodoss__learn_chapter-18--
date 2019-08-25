@@ -5,6 +5,7 @@ import getJSON from '../../api/getJSON';
 // import store from '../../store/store'
 import { updateSearchList } from '../../store/actions';
 import { connect } from 'react-redux';
+import Button from '../Button/Button';
 
 const Search = ({ className = '', updateResultSearch }) => {
   // react-хуки
@@ -73,13 +74,13 @@ const Search = ({ className = '', updateResultSearch }) => {
         Type here for search
       </label>{' '} */}
       </div>
-      <button
+      <Button
         className="search__submit btn btn_brand"
         disabled={isDisableSearch}
         onClick={handleClickSearch}
       >
         search
-      </button>
+      </Button>
     </section>
   );
 };

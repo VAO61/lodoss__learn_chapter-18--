@@ -1,15 +1,18 @@
 import React, { Fragment } from 'react';
-// import Search from '../components/Search/Search';
 import ResultList from '../components/ResultList/ResultList';
 import ResultListControl from '../components/ResultList/Control';
+import { connect } from 'react-redux';
 
-const SearchPage = ({ className = '' }) => (
+const MyListPage = ({ className = '', myList }) => (
   <Fragment>
     <h1 className="container">My List</h1>
-    {/* <Search className={`${className} container`} /> */}
     <ResultListControl className="result-list__control container" />{' '}
-    <ResultList className={'app__main container'} />
+    <ResultList className={'app__main container'} list={myList} />
   </Fragment>
 );
 
-export default SearchPage;
+const mapStateToProps = state => ({
+  myList: state.myList.slice(0, 6)
+});
+
+export default connect(mapStateToProps)(MyListPage);

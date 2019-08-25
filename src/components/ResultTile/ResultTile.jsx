@@ -2,6 +2,7 @@ import './ResultTile.scss';
 import React from 'react';
 import IconStar from '../../assets/img/icon-star.svg';
 import Button from '../Button/Button';
+import { connect } from 'react-redux';
 
 const Result = ({
   className,
@@ -11,7 +12,8 @@ const Result = ({
   stargazers_count,
   description,
   html_url,
-  topics
+  topics,
+  isExists
 }) => {
   return (
     <div className={`${className} result-tile`} id={id}>
@@ -39,11 +41,18 @@ const Result = ({
         </div>
       </div>
       <div className={`result-tile__add-remove`}>
-        <Button>Add to list</Button>
-        {/* TODO: state -> Add / Remove */}
+        {isExists ? (
+          <Button type="sub-brand">Remove from list</Button>
+        ) : (
+          <Button>Add to list</Button>
+        )}
       </div>
     </div>
   );
 };
 
-export default Result;
+const mapStateToProps = (state, props) => ({
+  isExists: !!state.myList.find(item => item.id === props.id)
+});
+
+export default connect(mapStateToProps)(Result);

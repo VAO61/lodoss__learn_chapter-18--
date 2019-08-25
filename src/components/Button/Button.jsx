@@ -3,15 +3,17 @@ import React from 'react';
 
 const Button = ({
   className = '',
-  active = false,
+  type = 'brand',
+  disabled = false,
   children,
   onClick = () => {}
 }) => (
   <button
     // TODO: не опnтимально, есть еще кнопка Search
-    className={`btn btn_${active ? 'sub-brand' : 'brand'} ${className}`}
+    className={`btn btn_${type} ${className}`}
     type={'button'}
     onClick={onClick} // addOrRemoveRepo(item)
+    disabled={disabled}
   >
     {/* {active ? 'Remove from list' : 'Add to list'} */}
     {children}

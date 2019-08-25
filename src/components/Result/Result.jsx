@@ -2,6 +2,7 @@ import './Result.scss';
 import React from 'react';
 import IconStar from '../../assets/img/icon-star.svg';
 import Checkbox from '../Checkbox/Checkbox';
+import { connect } from 'react-redux';
 
 const Result = ({
   className,
@@ -11,14 +12,13 @@ const Result = ({
   stargazers_count,
   description,
   html_url,
-  topics
+  topics,
+  isExists
 }) => {
   return (
     <div className={`${className} result`} id={id}>
       <div className={`result__add-remove`}>
-        <Checkbox />
-        {/* TODO: state -> Add / Remove */}
-        <Checkbox active />
+        <Checkbox active={isExists} />
       </div>
       <div className="result__main">
         <p className="result__title">
@@ -47,4 +47,8 @@ const Result = ({
   );
 };
 
-export default Result;
+const mapStateToProps = (state, props) => ({
+  isExists: !!state.myList.find(item => item.id === props.id)
+});
+
+export default connect(mapStateToProps)(Result);
