@@ -18,12 +18,12 @@ const ResultList = ({ className = '', list, theme }) => {
         {/* {searchList.map(item => ( */}
         {list.map(item =>
           theme === 'list' ? (
-            <Result className="result-list__result" key={item.id} {...item} />
+            <Result className="result-list__result" key={item.id} item={item} />
           ) : (
             <ResultTile
               className={'result-list-tile__result'}
               key={item.id}
-              {...item}
+              item={item}
             />
           )
         )}

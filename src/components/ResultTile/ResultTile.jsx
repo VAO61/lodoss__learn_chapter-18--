@@ -4,40 +4,32 @@ import IconStar from '../../assets/img/icon-star.svg';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
 
-const Result = ({
-  className,
-  id,
-  full_name,
-  language,
-  stargazers_count,
-  description,
-  html_url,
-  topics,
-  isExists
-}) => {
+const Result = ({ className, item, isExists }) => {
   return (
-    <div className={`${className} result-tile`} id={id}>
+    <div className={`${className} result-tile`} id={item.id}>
       <div className="result-tile__details result-details">
-        <p className="result-details__language">{language}</p>
+        <p className="result-details__language">{item.language}</p>
         <div className="result-details__stars-container">
           <img
             className="result-details__icon"
             src={IconStar}
             alt="icon star"
           />
-          <p className="result-details__count">{stargazers_count}</p>
+          <p className="result-details__count">{item.stargazers_count}</p>
         </div>
       </div>
       <div className="result-tile__main">
         <p className="result-tile__title">
-          <a href={html_url} className="lnk result-tile__link">
-            {full_name}
+          <a href={item.html_url} className="lnk result-tile__link">
+            {item.full_name}
           </a>
         </p>
-        <p className="result-tile__desc">{description}</p>
+        <p className="result-tile__desc">{item.description}</p>
         <div className="result-tile__tags">
-          {topics &&
-            topics.map(tag => <span className="result-tile__tag">{tag}</span>)}
+          {item.topics &&
+            item.topics.map(tag => (
+              <span className="result-tile__tag">{tag}</span>
+            ))}
         </div>
       </div>
       <div className={`result-tile__add-remove`}>
@@ -52,7 +44,7 @@ const Result = ({
 };
 
 const mapStateToProps = (state, props) => ({
-  isExists: !!state.myList.find(item => item.id === props.id)
+  isExists: !!state.myList.find(item => item.id === props.item.id)
 });
 
 export default connect(mapStateToProps)(Result);

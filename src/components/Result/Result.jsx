@@ -4,43 +4,33 @@ import IconStar from '../../assets/img/icon-star.svg';
 import Checkbox from '../Checkbox/Checkbox';
 import { connect } from 'react-redux';
 
-const Result = ({
-  className,
-  id,
-  full_name,
-  language,
-  stargazers_count,
-  description,
-  html_url,
-  topics,
-  isExists
-}) => {
+const Result = ({ className, item, isExists }) => {
   return (
-    <div className={`${className} result`} id={id}>
+    <div className={`${className} result`} id={item.id}>
       <div className={`result__add-remove`}>
         <Checkbox active={isExists} />
       </div>
       <div className="result__main">
         <p className="result__title">
-          <a href={html_url} className="lnk result__link">
-            {full_name}
+          <a href={item.html_url} className="lnk result__link">
+            {item.full_name}
           </a>
         </p>
-        <p className="result__desc">{description}</p>
+        <p className="result__desc">{item.description}</p>
         <div className="result__tags">
-          {topics &&
-            topics.map(tag => <span className="result__tag">{tag}</span>)}
+          {item.topics &&
+            item.topics.map(tag => <span className="result__tag">{tag}</span>)}
         </div>
       </div>
       <div className="result__details result-details">
-        <p className="result-details__language">{language}</p>
+        <p className="result-details__language">{item.language}</p>
         <div className="result-details__stars-container">
           <img
             className="result-details__icon"
             src={IconStar}
             alt="icon star"
           />
-          <p className="result-details__count">{stargazers_count}</p>
+          <p className="result-details__count">{item.stargazers_count}</p>
         </div>
       </div>
     </div>
@@ -48,7 +38,7 @@ const Result = ({
 };
 
 const mapStateToProps = (state, props) => ({
-  isExists: !!state.myList.find(item => item.id === props.id)
+  isExists: !!state.myList.find(item => item.id === props.item.id)
 });
 
 export default connect(mapStateToProps)(Result);
