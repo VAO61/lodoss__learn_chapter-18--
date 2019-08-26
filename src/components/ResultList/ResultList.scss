@@ -1,17 +1,13 @@
-$module: '.result-list';
+.result-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-#{$module} {
   &__control {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-top: 25px;
     padding-bottom: 60px;
-  }
-
-  &-tile {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
 }

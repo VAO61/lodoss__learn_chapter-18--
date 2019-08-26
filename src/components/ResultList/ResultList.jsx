@@ -8,13 +8,13 @@ import ResultTile from '../ResultTile/ResultTile';
 const ResultList = ({ className = '', list, theme }) => {
   return (
     <main className={className}>
-      <section className={`${className} result-list-tile`}>
+      <section className="result-list">
         {list.map(item =>
           theme === 'list' ? (
             <Result className="result-list__result" key={item.id} item={item} />
           ) : (
             <ResultTile
-              className={'result-list-tile__result'}
+              className={'result-list__result'}
               key={item.id}
               item={item}
             />

@@ -10,7 +10,7 @@ const SearchPage = ({ className = '', searchList, theme }) => (
   <Fragment>
     <Search className={`${className} container`} />
     {searchList.length === 0 ? (
-      <NoResultFound className={'app__main'} />
+      <NoResultFound className={'app__main container'} />
     ) : (
       <Fragment>
         <ResultListControl className="result-list__control container" />{' '}

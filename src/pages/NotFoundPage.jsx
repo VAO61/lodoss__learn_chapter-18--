@@ -3,7 +3,7 @@ import GitHubLogo from '../assets/img/github-logo.svg';
 
 import React from 'react';
 
-const NotFoundPage = ({ className = '' }) => (
+const NotFoundPage = ({ className = 'app__main' }) => (
   <main className={className}>
     <section className="container no-results">
       <div className="no-results__container">

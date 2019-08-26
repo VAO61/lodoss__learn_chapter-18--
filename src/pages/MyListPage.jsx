@@ -9,7 +9,7 @@ const MyListPage = ({ className = '', myList, theme }) => (
   <Fragment>
     <h1 className="container">My List</h1>
     {myList.length === 0 ? (
-      <EmptyMyList className={'app__main'} />
+      <EmptyMyList className={'app__main container'} />
     ) : (
       <Fragment>
         <ResultListControl className="result-list__control container" />{' '}
