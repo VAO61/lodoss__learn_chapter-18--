@@ -3,8 +3,6 @@ import axios from 'axios';
 const getJSON = function(type, searchValue, lang) {
   if (!type || !searchValue || !lang) {
     throw new Error('Some Error text');
-    // return;
-    // console.log('aaa');
   }
 
   return axios.get(
