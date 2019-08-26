@@ -14,7 +14,7 @@ const Result = ({
   addToMyList,
   removeFromMyList
 }) => (
-  <div className={`${className} result`} id={item.id}>
+  <div className={`${className} result`} key={item.id} id={item.id}>
     <div className={`result__add-remove`}>
       <Checkbox
         active={isExists}
@@ -23,21 +23,35 @@ const Result = ({
     </div>
     <div className="result__main">
       <p className="result__title">
-        <a href={item.html_url} className="lnk result__link">
+        <a
+          href={item.html_url}
+          className="lnk result__link"
+          key={`${item.id}_link`}
+        >
           {item.full_name}
         </a>
       </p>
-      <p className="result__desc">{item.description}</p>
+      <p className="result__desc" key={`${item.id}_desc`}>
+        {item.description}
+      </p>
       <div className="result__tags">
         {item.topics &&
-          item.topics.map(tag => <span className="result__tag">{tag}</span>)}
+          item.topics.map(tag => (
+            <span className="result__tag" key={`${item.id}_tag_${tag}`}>
+              {tag}
+            </span>
+          ))}
       </div>
     </div>
     <div className="result__details result-details">
-      <p className="result-details__language">{item.language}</p>
+      <p className="result-details__language" key={`${item.id}_lang`}>
+        {item.language}
+      </p>
       <div className="result-details__stars-container">
         <img className="result-details__icon" src={IconStar} alt="icon star" />
-        <p className="result-details__count">{item.stargazers_count}</p>
+        <p className="result-details__count" key={`${item.id}_stars`}>
+          {item.stargazers_count}
+        </p>
       </div>
     </div>
   </div>

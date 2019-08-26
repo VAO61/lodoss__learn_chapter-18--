@@ -14,25 +14,37 @@ const Result = ({
   addToMyList,
   removeFromMyList
 }) => (
-  <div className={`${className} result-tile`} id={item.id}>
+  <div className={`${className} result-tile`} key={item.id} id={item.id}>
     <div className="result-tile__details result-details">
-      <p className="result-details__language">{item.language}</p>
+      <p className="result-details__language" key={`${item.id}_lang`}>
+        {item.language}
+      </p>
       <div className="result-details__stars-container">
         <img className="result-details__icon" src={IconStar} alt="icon star" />
-        <p className="result-details__count">{item.stargazers_count}</p>
+        <p className="result-details__count" key={`${item.id}_stars`}>
+          {item.stargazers_count}
+        </p>
       </div>
     </div>
     <div className="result-tile__main">
       <p className="result-tile__title">
-        <a href={item.html_url} className="lnk result-tile__link">
+        <a
+          href={item.html_url}
+          className="lnk result-tile__link"
+          key={`${item.id}_link`}
+        >
           {item.full_name}
         </a>
       </p>
-      <p className="result-tile__desc">{item.description}</p>
+      <p className="result-tile__desc" key={`${item.id}_desc`}>
+        {item.description}
+      </p>
       <div className="result-tile__tags">
         {item.topics &&
           item.topics.map(tag => (
-            <span className="result-tile__tag">{tag}</span>
+            <span className="result-tile__tag" key={`${item.id}_tag_${tag}`}>
+              {tag}
+            </span>
           ))}
       </div>
     </div>

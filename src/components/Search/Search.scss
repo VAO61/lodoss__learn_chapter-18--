@@ -29,7 +29,19 @@
     font-size: inherit;
     padding: 7px 0;
     min-height: 36px;
+
+    &::placeholder {
+      color: inherit;
+    }
   }
+
+  // &__label {
+  //   position: absolute;
+  //   z-index: -1;
+  //   left: 0;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
 
   &__submit {
     &[disabled] {

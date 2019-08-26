@@ -73,10 +73,9 @@ const Search = ({ className = '', updateResultSearch }) => {
           value={searchValue}
           onChange={handleChangeSearchValue}
           onKeyDown={handleKeyDown}
+          placeholder="Type here for search"
+          autoComplete="off"
         />
-        {/* <label className="form__label" for="typeForSearch">
-          Type here for search
-        </label>{' '} */}
       </div>
       <Button
         className="search__submit btn btn_brand"
