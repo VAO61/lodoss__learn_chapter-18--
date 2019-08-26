@@ -1,16 +1,14 @@
-// &#{$defaultClass}
-
-$defaultClass: "[class*='css-']";
+$defaultClassReactSelect: "[class*='css-']";
 
 .select {
   padding: 0;
-  &#{$defaultClass} {
+  &#{$defaultClassReactSelect} {
     appearance: none;
     outline: none;
   }
 
   &__control {
-    &#{$defaultClass} {
+    &#{$defaultClassReactSelect} {
       background-color: inherit;
       border: none;
       min-height: inherit;
@@ -28,27 +26,27 @@ $defaultClass: "[class*='css-']";
   }
 
   &__value-container {
-    &#{$defaultClass} {
+    &#{$defaultClassReactSelect} {
       padding: 0;
     }
   }
 
   &__placeholder,
   &__single-value {
-    &#{$defaultClass} {
+    &#{$defaultClassReactSelect} {
       color: $color-text;
       margin: 0;
     }
   }
 
   &__dropdown-indicator {
-    &#{$defaultClass} {
+    &#{$defaultClassReactSelect} {
       color: inherit;
     }
   }
 
   &__indicator-separator {
-    &#{$defaultClass} {
+    &#{$defaultClassReactSelect} {
       display: none;
     }
   }
@@ -57,8 +55,5 @@ $defaultClass: "[class*='css-']";
     > input {
       width: 100% !important;
     }
-    // &[id*='react-select-'] {
-    // &[class*='react-select-'] {
-    // }
   }
 }

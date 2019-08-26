@@ -4,8 +4,8 @@ import './App.scss';
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import browserHistory from './browserHistory';
-import Header from './components/Header/Header';
 
+import Header from './components/Header/Header';
 import MyListPage from './pages/MyListPage';
 import SearchPage from './pages/SearchPage';
 import NotFoundPage from './pages/NotFoundPage';

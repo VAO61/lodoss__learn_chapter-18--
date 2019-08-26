@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import EmptyMyList from '../components/EmptyMyList/EmptyMyList';
-import ResultList from '../components/ResultList/ResultList';
-import ResultListControl from '../components/ResultList/Control';
 import { connect } from 'react-redux';
+
+import EmptyMyList from '../components/EmptyMyList/EmptyMyList';
+import ResultListControl from '../components/ResultList/Control';
+import ResultList from '../components/ResultList/ResultList';
 
 const MyListPage = ({ className = '', myList, theme }) => (
   <Fragment>

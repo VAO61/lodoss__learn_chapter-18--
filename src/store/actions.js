@@ -20,11 +20,7 @@ export const removeFromMyList = id => ({
   payload: id
 });
 
-export const setTheme = theme => {
-  // console.log(theme);
-
-  return {
-    type: SET_THEME,
-    payload: theme
-  };
-};
+export const setTheme = theme => ({
+  type: SET_THEME,
+  payload: theme
+});

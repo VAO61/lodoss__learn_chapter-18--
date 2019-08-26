@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+
 import Search from '../components/Search/Search';
 import NoResultFound from '../components/NoResultFound/NoResultFound';
-import ResultList from '../components/ResultList/ResultList';
 import ResultListControl from '../components/ResultList/Control';
-import { connect } from 'react-redux';
+import ResultList from '../components/ResultList/ResultList';
 
 const SearchPage = ({ className = '', searchList, theme }) => (
   <Fragment>

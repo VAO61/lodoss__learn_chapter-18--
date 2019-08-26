@@ -1,13 +1,8 @@
 import './Checkbox.scss';
+
 import React from 'react';
 
-const Checkbox = ({
-  className = '',
-  active = false,
-  onClick = () => {
-    // addOrRemoveRepo(item)
-  }
-}) => (
+const Checkbox = ({ active = false, onClick = () => {} }) => (
   <button
     className={`checkbox ${active ? 'checkbox_active' : ''}`}
     type="button"

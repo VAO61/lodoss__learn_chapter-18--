@@ -1,24 +1,21 @@
 import './Search.scss';
+
 import React, { useState, useCallback } from 'react';
-import Select from '../Select/Select';
-import getJSON from '../../api/getJSON';
-// import store from '../../store/store'
-import { updateSearchList } from '../../store/actions';
 import { connect } from 'react-redux';
+
+import getJSON from '../../api/getJSON';
+import Select from '../Select/Select';
 import Button from '../Button/Button';
+import { updateSearchList } from '../../store/actions';
 
 const Search = ({ className = '', updateResultSearch }) => {
-  // react-хуки
   const [type, setType] = useState('Repositories');
   const [lang, setLang] = useState('');
   const [searchValue, setSearchValue] = useState('');
 
-  // react-хуки
   const handleClickSearch = useCallback(async () => {
     const { data } = await getJSON(type, searchValue, lang);
     updateResultSearch(data.items);
-    // dispatch(updateSearchList(data.items))
-    // store.dispatch(updateSearchList(data.items))
   }, [type, lang, searchValue]);
 
   const handleChangeType = useCallback(data => setType(data.value), []);
@@ -44,7 +41,6 @@ const Search = ({ className = '', updateResultSearch }) => {
         <Select
           options={[{ value: 'Repositories', label: 'Repositories' }]}
           value={type}
-          // defaultValue={type}
           onChange={handleChangeType}
           defaultInputValue={type}
           placeholder="Type"
@@ -67,7 +63,6 @@ const Search = ({ className = '', updateResultSearch }) => {
           ]}
           onChange={handleChangeLang}
           defaultInputValue={lang}
-          // defaultInputValue=""
           placeholder="Language"
         />
       </div>
@@ -80,8 +75,8 @@ const Search = ({ className = '', updateResultSearch }) => {
           onKeyDown={handleKeyDown}
         />
         {/* <label className="form__label" for="typeForSearch">
-        Type here for search
-      </label>{' '} */}
+          Type here for search
+        </label>{' '} */}
       </div>
       <Button
         className="search__submit btn btn_brand"

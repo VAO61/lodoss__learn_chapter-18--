@@ -1,5 +1,6 @@
 import '../components/NoResultFound/NoResultFound.scss';
 import GitHubLogo from '../assets/img/github-logo.svg';
+
 import React from 'react';
 
 const NotFoundPage = ({ className = '' }) => (

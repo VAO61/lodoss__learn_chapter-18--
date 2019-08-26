@@ -1,10 +1,11 @@
-// import '../../assets/scss/_btn.scss' // TODO: Temp?
+import './Control.scss';
 import IconTile from '../../assets/img/icon-tile.svg';
 import IconList from '../../assets/img/icon-list.svg';
-import './Control.scss';
+
 import React from 'react';
-import { setTheme } from '../../store/actions';
 import { connect } from 'react-redux';
+
+import { setTheme } from '../../store/actions';
 
 const Button = ({
   className = '',
