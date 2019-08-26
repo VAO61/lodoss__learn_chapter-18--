@@ -5,11 +5,11 @@ import EmptyMyList from '../components/EmptyMyList/EmptyMyList';
 import ResultListControl from '../components/ResultListControl/ResultListControl';
 import ResultList from '../components/ResultList/ResultList';
 
-const MyListPage = ({ className = '', myList, theme }) => (
+const MyListPage = ({ myList, theme }) => (
   <Fragment>
     <h1 className="container">My List</h1>
     {myList.length === 0 ? (
-      <EmptyMyList className={'app__main container'} />
+      <EmptyMyList className="app__main container" />
     ) : (
       <Fragment>
         <ResultListControl className="result-list__control container" />{' '}

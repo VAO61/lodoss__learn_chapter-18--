@@ -2,6 +2,7 @@ import './Search.scss';
 
 import React, { useState, useCallback } from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import getJSON from '../../api/getJSON';
 import Select from '../Select/Select';
@@ -36,7 +37,7 @@ const Search = ({ className = '', updateResultSearch }) => {
   const isDisableSearch = type === '' || lang === '' || searchValue === '';
 
   return (
-    <section className={`${className} search`}>
+    <section className={classNames(className, 'search')}>
       <div className="search__item">
         <Select
           options={[{ value: 'Repositories', label: 'Repositories' }]}

@@ -3,6 +3,7 @@ import IconStar from '../../assets/img/icon-star.svg';
 
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import Button from '../Button/Button';
 import { addToMyList, removeFromMyList } from '../../store/actions';
@@ -14,7 +15,11 @@ const Result = ({
   addToMyList,
   removeFromMyList
 }) => (
-  <div className={`${className} result-tile`} key={item.id} id={item.id}>
+  <div
+    className={classNames(className, 'result-tile')}
+    key={item.id}
+    id={item.id}
+  >
     <div className="result-tile__details result-details">
       <p className="result-details__language" key={`${item.id}_lang`}>
         {item.language}
@@ -48,7 +53,7 @@ const Result = ({
           ))}
       </div>
     </div>
-    <div className={`result-tile__add-remove`}>
+    <div className="result-tile__add-remove">
       {isExists ? (
         <Button type="sub-brand" onClick={removeFromMyList(item.id)}>
           Remove from list

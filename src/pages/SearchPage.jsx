@@ -6,16 +6,16 @@ import NoResultFound from '../components/NoResultFound/NoResultFound';
 import ResultListControl from '../components/ResultListControl/ResultListControl';
 import ResultList from '../components/ResultList/ResultList';
 
-const SearchPage = ({ className = '', searchList, theme }) => (
+const SearchPage = ({ searchList, theme }) => (
   <Fragment>
-    <Search className={`${className} container`} />
+    <Search className="container" />
     {searchList.length === 0 ? (
-      <NoResultFound className={'app__main container'} />
+      <NoResultFound className="app__main container" />
     ) : (
       <Fragment>
         <ResultListControl className="result-list__control container" />{' '}
         <ResultList
-          className={'app__main container'}
+          className="app__main container"
           list={searchList}
           theme={theme}
         />

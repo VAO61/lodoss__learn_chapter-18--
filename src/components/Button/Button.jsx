@@ -1,6 +1,7 @@
 import './Button.scss';
 
 import React from 'react';
+import classNames from 'classnames';
 
 const Button = ({
   className = '',
@@ -10,7 +11,7 @@ const Button = ({
   onClick = () => {}
 }) => (
   <button
-    className={`btn btn_${type} ${className}`}
+    className={classNames('btn', 'btn_' + type, className)}
     type={'button'}
     onClick={onClick} // addOrRemoveRepo(item)
     disabled={disabled}

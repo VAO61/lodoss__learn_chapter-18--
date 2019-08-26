@@ -3,6 +3,7 @@ import IconStar from '../../assets/img/icon-star.svg';
 
 import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 import Checkbox from '../Checkbox/Checkbox';
 import { addToMyList, removeFromMyList } from '../../store/actions';
@@ -14,8 +15,8 @@ const Result = ({
   addToMyList,
   removeFromMyList
 }) => (
-  <div className={`${className} result`} key={item.id} id={item.id}>
-    <div className={`result__add-remove`}>
+  <div className={classNames(className, 'result')} key={item.id} id={item.id}>
+    <div className="result__add-remove">
       <Checkbox
         active={isExists}
         onClick={isExists ? removeFromMyList(item.id) : addToMyList(item)}
