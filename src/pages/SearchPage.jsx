@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Search from '../components/Search/Search';
 import NoResultFound from '../components/NoResultFound/NoResultFound';
-import ResultListControl from '../components/ResultList/Control';
+import ResultListControl from '../components/ResultListControl/ResultListControl';
 import ResultList from '../components/ResultList/ResultList';
 
 const SearchPage = ({ className = '', searchList, theme }) => (

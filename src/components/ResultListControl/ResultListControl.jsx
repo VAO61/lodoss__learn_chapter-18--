@@ -1,4 +1,4 @@
-import './Control.scss';
+import './ResultListControl.scss';
 import IconTile from '../../assets/img/icon-tile.svg';
 import IconList from '../../assets/img/icon-list.svg';
 

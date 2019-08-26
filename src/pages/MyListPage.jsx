@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import EmptyMyList from '../components/EmptyMyList/EmptyMyList';
-import ResultListControl from '../components/ResultList/Control';
+import ResultListControl from '../components/ResultListControl/ResultListControl';
 import ResultList from '../components/ResultList/ResultList';
 
 const MyListPage = ({ className = '', myList, theme }) => (
