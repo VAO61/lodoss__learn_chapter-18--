@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Search from '../components/Search/Search';
-import NoResult from '../components/NoResult/NoResult';
+import NoResultFound from '../components/NoResultFound/NoResultFound';
 import ResultList from '../components/ResultList/ResultList';
 import ResultListControl from '../components/ResultList/Control';
 import { connect } from 'react-redux';
@@ -9,7 +9,7 @@ const SearchPage = ({ className = '', searchList, theme }) => (
   <Fragment>
     <Search className={`${className} container`} />
     {searchList.length === 0 ? (
-      <NoResult className={'app__main'} />
+      <NoResultFound className={'app__main'} />
     ) : (
       <Fragment>
         <ResultListControl className="result-list__control container" />{' '}

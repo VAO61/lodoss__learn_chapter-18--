@@ -1,26 +1,32 @@
+import './assets/scss/style.scss';
+import './App.scss';
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Route, Switch } from 'react-router-dom';
+import browserHistory from './browserHistory';
+import Header from './components/Header/Header';
+
+import MyListPage from './pages/MyListPage';
+import SearchPage from './pages/SearchPage';
+import NotFoundPage from './pages/NotFoundPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
+  if (browserHistory.location.pathname === '/') {
+    browserHistory.push('/search');
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={browserHistory}>
+      <div className="app">
+        <Header className="app__header" />
+        <Switch>
+          <Route path="/search" component={SearchPage} />
+          <Route path="/my-list" component={MyListPage} />
+          <Route path="*" component={NotFoundPage} />
+        </Switch>
+        <Footer className="app__footer" />
+      </div>
+    </Router>
   );
 }
 
