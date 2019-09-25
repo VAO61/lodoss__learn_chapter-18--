@@ -19,6 +19,7 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
+const JavaScriptObfuscator = require('webpack-obfuscator');
 const paths = require('./paths');
 const modules = require('./modules');
 const getClientEnvironment = require('./env');
@@ -30,9 +31,10 @@ const eslint = require('eslint');
 const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
+const isProd = process.env.NODE_ENV === 'production'
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
-const shouldUseSourceMap = process.env.NODE_ENV !== 'production';
+const shouldUseSourceMap = !isProd;
 
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
 // makes for a smoother build process.
@@ -567,6 +569,10 @@ module.exports = function(webpackEnv) {
           // both options are optional
           filename: 'static/css/[name].[contenthash:8].css',
           chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
+        }),
+      isEnvProduction &&
+         new JavaScriptObfuscator ({
+            rotateUnicodeArray: true
         }),
       // Generate a manifest file which contains a mapping of all asset filenames
       // to their corresponding output file so that tools can pick it up without
